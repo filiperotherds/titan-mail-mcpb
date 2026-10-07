@@ -40,18 +40,22 @@ Titan has an [official MCP connector](https://support.titan.email/hc/en-us/artic
 
 ## Quick start
 
-### Option 1 — Claude Desktop extension (no terminal for the end user)
+### Option 1 — Claude Desktop extension (no terminal needed)
 
-Build the bundle once:
+1. Download the `.mcpb` file from the [latest release](https://github.com/filiperotherds/titan-mail-mcpb/releases/latest). Each release lists its SHA-256 checksum.
+2. Double-click it, or drag it into **Claude Desktop → Settings → Extensions**.
+3. Fill in email and password, done.
+
+The password goes into the OS keychain via Claude Desktop's `sensitive` config — it never touches a plain file. Claude Desktop may warn that the extension is unverified; that's expected for extensions distributed outside its directory.
+
+Prefer to build it yourself?
 
 ```bash
 git clone https://github.com/filiperotherds/titan-mail-mcpb.git
 cd titan-mail-mcpb
 npm ci
-npm run build:mcpb
+npm run build:mcpb   # → out/titan-mail.mcpb
 ```
-
-That produces `out/titan-mail.mcpb`. Double-click it (or drag it into **Claude Desktop → Settings → Extensions**), fill in email and password, done. The password goes into the OS keychain via Claude Desktop's `sensitive` config — it never touches a plain file.
 
 The install form asks for:
 
@@ -231,7 +235,7 @@ Things I'd like to add, roughly in order. Contributions very welcome:
 - [ ] Move, archive, flag and mark-as-read tools
 - [ ] English tool names (keeping the Portuguese ones as aliases)
 - [ ] Tests against a local IMAP server (e.g. GreenMail) in CI
-- [ ] Prebuilt `.mcpb` attached to GitHub Releases
+- [x] Prebuilt `.mcpb` attached to GitHub Releases
 
 ## Contributing
 
