@@ -1,0 +1,19 @@
+[
+  {
+    "id": "cliente-exemplo",
+    "tokenSha256": "gere com: npm run gen-token",
+    "email": "contato@seudominio.com.br",
+    "passwordEnv": "PW_CLIENTE_EXEMPLO",
+    "fromName": "Contato Seu Domínio",
+    "allowSend": true
+  },
+  {
+    "id": "outro-provedor",
+    "tokenSha256": "gere com: npm run gen-token",
+    "email": "usuario@outrodominio.com",
+    "passwordEnv": "PW_OUTRO_PROVEDOR",
+    "imap": { "host": "imap.outroprovedor.com", "port": 993, "secure": true },
+    "smtp": { "host": "smtp.outroprovedor.com", "port": 465, "secure": true },
+    "allowSend": false
+  }
+]

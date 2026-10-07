@@ -1,0 +1,78 @@
+{
+  "manifest_version": "0.3",
+  "name": "titan-mail",
+  "display_name": "E-mail (Titan)",
+  "version": "1.0.0",
+  "description": "Permite que o Claude busque, leia e (opcionalmente) envie e-mails da sua conta Titan.",
+  "long_description": "Conecta o Claude à sua caixa de e-mail Titan via IMAP/SMTP. Você pode pedir resumos dos e-mails do dia, procurar mensagens de um fornecedor, ler o conteúdo de um e-mail e, se ativar a opção, enviar respostas — o Claude sempre mostra uma prévia antes de enviar. Sua senha fica guardada no cofre de senhas do sistema, apenas neste computador.",
+  "author": {
+    "name": "Filipe Rother"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js", "--stdio"],
+      "env": {
+        "MAIL_USER": "${user_config.email}",
+        "MAIL_PASSWORD": "${user_config.password}",
+        "MAIL_FROM_NAME": "${user_config.from_name}",
+        "ALLOW_SEND": "${user_config.allow_send}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "listar_pastas",
+      "description": "Lista as pastas da caixa de e-mail"
+    },
+    {
+      "name": "buscar_emails",
+      "description": "Busca e-mails por remetente, assunto, texto, data ou não lidos"
+    },
+    {
+      "name": "ler_email",
+      "description": "Lê o conteúdo completo de um e-mail"
+    },
+    {
+      "name": "enviar_email",
+      "description": "Envia um e-mail (somente se ativado; sempre com prévia antes)"
+    }
+  ],
+  "user_config": {
+    "email": {
+      "type": "string",
+      "title": "Seu e-mail",
+      "description": "O endereço completo, por exemplo contato@suaempresa.com.br",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "title": "Senha do e-mail",
+      "description": "A mesma senha que você usa para entrar no e-mail. Fica guardada só neste computador.",
+      "sensitive": true,
+      "required": true
+    },
+    "from_name": {
+      "type": "string",
+      "title": "Nome do remetente (opcional)",
+      "description": "Como seu nome aparece para quem recebe, por exemplo Construtora Silva",
+      "required": false,
+      "default": ""
+    },
+    "allow_send": {
+      "type": "boolean",
+      "title": "Permitir enviar e-mails",
+      "description": "Deixe desmarcado para o Claude só ler e buscar. Marque se quiser que ele também envie respostas.",
+      "required": false,
+      "default": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["win32", "darwin"],
+    "runtimes": { "node": ">=20.0.0" }
+  },
+  "keywords": ["email", "titan", "imap"],
+  "license": "UNLICENSED"
+}
