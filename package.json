@@ -1,7 +1,8 @@
 {
   "name": "titan-mail-mcp",
   "version": "1.0.0",
-  "description": "Servidor MCP de e-mail via IMAP/SMTP (Titan e outros provedores)",
+  "description": "MCP server to search, read and send email over IMAP/SMTP (Titan Mail by default)",
+  "keywords": ["mcp", "model-context-protocol", "claude", "imap", "smtp", "email", "titan"],
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -10,8 +11,8 @@
     "gen-token": "node dist/gen-token.js",
     "build:mcpb": "node scripts/build-mcpb.mjs"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Filipe Rother",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",

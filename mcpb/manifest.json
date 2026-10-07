@@ -74,5 +74,5 @@
     "runtimes": { "node": ">=20.0.0" }
   },
   "keywords": ["email", "titan", "imap"],
-  "license": "UNLICENSED"
+  "license": "MIT"
 }
