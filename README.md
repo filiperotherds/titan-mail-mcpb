@@ -45,8 +45,8 @@ Titan has an [official MCP connector](https://support.titan.email/hc/en-us/artic
 Build the bundle once:
 
 ```bash
-git clone https://github.com/OWNER/titan-mail-mcp.git
-cd titan-mail-mcp
+git clone https://github.com/filiperotherds/titan-mail-mcpb.git
+cd titan-mail-mcpb
 npm ci
 npm run build:mcpb
 ```

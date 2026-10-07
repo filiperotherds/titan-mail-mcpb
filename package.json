@@ -12,6 +12,12 @@
     "build:mcpb": "node scripts/build-mcpb.mjs"
   },
   "author": "Filipe Rother",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filiperotherds/titan-mail-mcpb.git"
+  },
+  "homepage": "https://github.com/filiperotherds/titan-mail-mcpb#readme",
+  "bugs": "https://github.com/filiperotherds/titan-mail-mcpb/issues",
   "license": "MIT",
   "type": "module",
   "dependencies": {
